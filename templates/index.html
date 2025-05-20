@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halodoc Fake Doctor's Note</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+        }
+        .footer p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h4 class="mb-4">DASAR PEMBOLOS | Halodoc Fake Doctor's Note Generator v0.1</h4>
+        <form id="doctorNoteForm" action="/generate" method="post">
+            <div class="form-group">
+                <label for="ngaran">Nama:</label>
+                <input type="text" id="ngaran" name="ngaran" class="form-control" placeholder="Nama Lengkap" required>
+
+                <label for="boga">Gender:</label>
+                <div>
+                    <label>
+                        <input type="radio" name="boga" value="male" required>
+                        Pria
+                    </label>
+                    <label>
+                        <input type="radio" name="boga" value="female" required>
+                        Wanita
+                    </label>
+                </div>
+                <label for="borojol">Tanggal Lahir:</label>
+                <input type="date" id="borojol" name="borojol" class="form-control" required>
+                <label for="reureuh">Isitirahat :</label>
+                <select id="reureuh" name="reureuh" class="form-control" onchange="updateDate()" required>
+                    <option value="0"></option>
+                    <option value="1">1 Hari</option>
+                    <option value="2">2 Hari</option>
+                    <option value="3">3 Hari</option>
+                </select>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </div>
+        </form>
+        <p id="response" class="mt-4"></p>
+    </div>
+
+    <footer class="footer mt-5">
+        <p>Created with 🗿 by Kaum Rebahan &copy; 2024 Halodoc Fake Doctor's Note. All rights reserved.</p>
+    </footer>
+</body>
+</html>
